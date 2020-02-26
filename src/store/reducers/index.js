@@ -5,7 +5,8 @@ const initialState = {
     vida: {
         vidaPeleador1: 100,
         vidaPeleador2: 100
-    }
+    },
+    siendoAtacado: [true, true]
 }
 
 const unicoReducer = (state = initialState, action) => {
@@ -24,10 +25,9 @@ const unicoReducer = (state = initialState, action) => {
             return {
                 ...state,
                 vida: {
+                    ...state.vida,
                     vidaPeleador1: state.vida.vidaPeleador1 - action.val,
-                    vidaPeleador2: state.vida.vidaPeleador2
-                },
-                counter: [...state.counter]
+                }
             };
         case actionTypes.DISMINUYE_VIDA_2:
             if (state.vida.vidaPeleador2 - action.val <= 0) {
@@ -43,10 +43,9 @@ const unicoReducer = (state = initialState, action) => {
             return {
                 ...state,
                 vida: {
-                    vidaPeleador1: state.vida.vidaPeleador1,
+                    ...state.vida,
                     vidaPeleador2: state.vida.vidaPeleador2 - action.val
-                },
-                counter: [...state.counter]
+                }
             };            
         case actionTypes.REINICIAR_JUEGO:
             return {
@@ -66,7 +65,7 @@ const unicoReducer = (state = initialState, action) => {
             return {
                 ...state,
                 counter: [state.counter[0], state.counter[1] + 1]
-            };   
+            }; 
         default:
             return state
     }

@@ -7,4 +7,15 @@
   box-sizing: border-box;
 }
 
+.atacado {
+  animation: atacado 0.2s ease 0.1s 8;
+}
 
+@keyframes atacado {
+    from {
+        background-color: rgba(255, 255, 255, 0.747);
+    }
+    to {        
+        background-color: rgba(255, 255, 255, 0.219);
+    }
+}
