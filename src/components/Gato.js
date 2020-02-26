@@ -13,7 +13,7 @@ const Gato = () => {
     return (
         <div>
             <p className={classes.vida}>{vida}</p>
-        <img src={gato} className={classes.peleadorImg} ></img>
+        <img src={gato} className={classes.peleadorImg} onClick={() => dispatch(actionCreators.disminuyeVida1(20))} ></img>
         </div>
     )
 }

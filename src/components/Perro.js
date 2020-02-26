@@ -6,12 +6,15 @@ import * as actionCreators from '../store/actions/actions';
 
 const Perro = () => {
 
-    const vida = useSelector(store => store.vida.vidaPeleador1)
-
+    const vida = useSelector(store => store.vida.vidaPeleador1);
+    const dispatch = useDispatch();
+    
     return (
         <div>
-            <p className={classes.vida}>{vida}</p>
-            <img src={perro} className={classes.peleadorImg} ></img>
+            <p className={classes.vida}>
+                {vida}
+            </p>
+            <img src={perro} className={classes.peleadorImg} onClick={() => {dispatch(actionCreators.disminuyeVida2(30))}} ></img>
         </div>
     )
 }

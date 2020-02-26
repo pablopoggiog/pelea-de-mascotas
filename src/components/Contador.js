@@ -5,7 +5,7 @@ import * as actionCreators from '../store/actions/actions';
 
 const Contador = () => {
 
-    const counter = useSelector(store => store.counter);
+    const counter = useSelector(store => store);
     const dispatch = useDispatch();
 
     return (

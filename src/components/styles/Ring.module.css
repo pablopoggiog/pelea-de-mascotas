@@ -5,7 +5,15 @@
     height: 80%;
     width: 80%;
     border-radius: 2%;
+}
 
+.containerGameOver {
+    background: rgba(255, 255, 255, 0.527);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 80%;
+    width: 80%;
+    border-radius: 2%;
 }
 
 .ringContainer {

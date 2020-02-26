@@ -1,22 +1,46 @@
-import { DISMINUYE_VIDA_1, DISMINUYE_VIDA_2 } from '../actions/actions';
+import * as actionTypes from '../actions/actions';
 
 const initialState = {
-    vidaPeleador1: 300,
-    vidaPeleador2: 200
+        vidaPeleador1: 100,
+        vidaPeleador2: 100
 }
 
 const vidaReducer = (state = initialState, action) => {
+
     switch (action.type) {
-        case DISMINUYE_VIDA_1:
+        case actionTypes.DISMINUYE_VIDA_1:
+            // if (state.vidaPeleador1 - action.val <= 0) {
+            //     return {
+            //         ...state,
+            //         counter: [state.counter[0], state.counter[1] + 1],
+            //         vidaPeleador1: 100,
+            //         vidaPeleador2: 100
+            //     }
+            // }
             return {
                 ...state,
                 vidaPeleador1: state.vidaPeleador1 - action.val
             };
-        case DISMINUYE_VIDA_2:
+        case actionTypes.DISMINUYE_VIDA_2:
+            // if (state.vidaPeleador1 - action.val <= 0) {
+            //     actionTypes.gano1();
+            //     return {
+            //         ...state,
+            //         counter: [state.counter[0] +1, state.counter[1]],
+            //         vidaPeleador1: 100,
+            //         vidaPeleador2: 100
+            //     }
+            // }
             return {
                 ...state,
                 vidaPeleador2: state.vidaPeleador2 - action.val
-            };
+            };            
+        case actionTypes.REINICIAR_JUEGO:
+            return {
+                ...state,
+                vidaPeleador1: 100,
+                vidaPeleador2: 100
+            };    
         default:
             return state
     }
